@@ -35,3 +35,15 @@ CREATE TABLE f_proj.articles_cleaner (
 	article TEXT,
 	twitter TEXT
 );
+
+/* started cleaning */
+
+BEGIN;
+
+UPDATE f_proj.articles_raw
+SET author = regexp_replace(author, 'By ', '')
+;
+
+COMMIT;
+
+
