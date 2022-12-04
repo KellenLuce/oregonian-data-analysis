@@ -46,4 +46,7 @@ SET author = regexp_replace(author, 'By ', '')
 
 COMMIT;
 
+INSERT INTO f_proj.articles_cleaner (headline) 
+	SELECT headline FROM (SELECT DISTINCT * FROM f_proj.articles_raw)
+;
 
