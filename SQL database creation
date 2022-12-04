@@ -102,6 +102,34 @@ ALTER COLUMN date_updated SET DATA TYPE TIMESTAMP USING date_updated::timestamp 
 /* Shelving correct column types for now */
 
 
+/* ts column setup */
+BEGIN;
+
+ALTER TABLE f_proj.articles_raw
+ADD COLUMN article_vec tsvector
+;
+
+UPDATE f_proj.articles_raw
+SET article_vec = to_tsvector(article);
+
+CREATE INDEX gindex ON f_proj.articles_raw
+USING gin(article_vec);
+
+COMMIT;
+
+/* grabbing twitter handles (poorly) */
+
+
+SELECT regexp_match(article, 'Twitter\s(.{20})') twit, 
+regexp_match(article, ';\s(@.{20})') semicolon, 
+regexp_match(article, 'Twitter:\s(.{20})') twit_semicolon,
+regexp_match(article, ',\s(@.{20})') comma,
+regexp_match(article, '\|\s(@.{20})') bar,
+regexp_match(article, 'her\s(@.{20})') rose_wong,
+regexp_match(article, '\((@.{20})') paren
+FROM f_proj.articles_raw
+ORDER BY twit, semicolon, twit_semicolon, comma, bar, paren, rose_wong
+;
 
 
 
