@@ -21,3 +21,17 @@ WITH (FORMAT CSV, HEADER);
 COPY f_proj.articles_raw
 FROM ''
 WITH (FORMAT CSV, HEADER);
+
+CREATE TABLE f_proj.articles_cleaner (
+	"id" SERIAL,
+	headline TEXT,
+	author TEXT,
+	author_id INT,
+	newspaper TEXT,
+	"label" TEXT,
+	date_updated TIMESTAMP,
+	date_published TIMESTAMP,
+	share_count INT,
+	article TEXT,
+	twitter TEXT
+);
