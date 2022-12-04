@@ -98,6 +98,25 @@ ALTER TABLE f_proj.articles_raw
 ALTER COLUMN date_updated SET DATA TYPE TIMESTAMP USING date_updated::timestamp without time zone
 ;
 
+/* Getting newspaper if different from listed author */
+BEGIN;
+
+ALTER TABLE f_proj.articles_raw
+ADD COLUMN newspaper TEXT
+;
+
+UPDATE f_proj.articles_raw
+SET newspaper = regexp_match(author, '\s\|\s([\w\s+]+)');
+
+COMMIT;
+
+BEGIN;
+UPDATE f_proj.articles_raw
+SET author = (regexp_split_to_array(author, ' \| '))[1];
+COMMIT;
+
+
+
 /* Getting the following: ERROR:  invalid input syntax for type timestamp: "Nov. 30, 2022, 4:44 p.m." */
 /* Shelving correct column types for now */
 
@@ -116,6 +135,8 @@ CREATE INDEX gindex ON f_proj.articles_raw
 USING gin(article_vec);
 
 COMMIT;
+
+
 
 /* grabbing twitter handles (poorly) */
 
