@@ -41,12 +41,42 @@ CREATE TABLE f_proj.articles_cleaner (
 BEGIN;
 
 UPDATE f_proj.articles_raw
-SET author = regexp_replace(author, 'By ', '')
+SET author = ltrim(author, 'By ')
 ;
 
 COMMIT;
 
-INSERT INTO f_proj.articles_cleaner (headline) 
-	SELECT headline FROM (SELECT DISTINCT * FROM f_proj.articles_raw)
+
+ALTER TABLE f_proj.articles_raw
+ADD COLUMN article_id SERIAL;
+
+
+DELETE FROM f_proj.articles_raw
+WHERE article_id NOT IN (
+	SELECT MAX(article_id)
+	FROM f_proj.articles_raw
+	GROUP BY headline, author, "label", date_updated, date_published, share_count, article
+	)
 ;
+/* note that above leaves duplicated articles that have two different share_counts. */
+/* fixing that data + type */
+
+UPDATE f_proj.articles_raw
+SET share_count = 0
+WHERE share_count = 'None'
+;
+
+ALTER TABLE f_proj.articles_raw
+ALTER COLUMN share_count SET DATA TYPE INT USING share_count::INT
+;
+
+/* fixing the update + publication dates too */
+
+UPDATE f_proj.articles_raw
+SET date_updated = ltrim(date_updated, 'Updated: ')
+;
+
+
+
+
 
