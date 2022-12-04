@@ -1,0 +1,23 @@
+
+CREATE SCHEMA f_proj;
+
+
+CREATE TABLE f_proj.articles_raw (
+	
+	headline TEXT,
+	author TEXT,
+	"label" TEXT,
+	date_updated TEXT,
+	date_published TEXT,
+	share_count TEXT,
+	article TEXT
+
+);
+
+COPY f_proj.articles_raw
+FROM ''
+WITH (FORMAT CSV, HEADER);
+
+COPY f_proj.articles_raw
+FROM ''
+WITH (FORMAT CSV, HEADER);
