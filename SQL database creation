@@ -72,9 +72,34 @@ ALTER COLUMN share_count SET DATA TYPE INT USING share_count::INT
 
 /* fixing the update + publication dates too */
 
+BEGIN;
+
 UPDATE f_proj.articles_raw
 SET date_updated = ltrim(date_updated, 'Updated: ')
 ;
+UPDATE f_proj.articles_raw
+SET date_updated = rtrim(date_updated, '|')
+;
+
+UPDATE f_proj.articles_raw
+SET date_published = ltrim(date_published, 'Published: ')
+;
+
+UPDATE f_proj.articles_raw
+SET date_updated = NULL
+WHERE date_updated = 'None'
+;
+
+COMMIT;
+
+BEGIN;
+
+ALTER TABLE f_proj.articles_raw
+ALTER COLUMN date_updated SET DATA TYPE TIMESTAMP USING date_updated::timestamp without time zone
+;
+
+/* Getting the following: ERROR:  invalid input syntax for type timestamp: "Nov. 30, 2022, 4:44 p.m." */
+/* Shelving correct column types for now */
 
 
 
