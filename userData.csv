@@ -1,22 +1,22 @@
-,name,username,id,followers_count,following_count,tweet_count,listed_count
-0,Jamie Hale,HaleJamesB,21505125,3900,1356,8362,107
-1,Ted Sickinger,tedsickinger,199853726,2199,151,583,112
-2,Lizzy Acker,lizzzyacker,85972500,5208,4305,17756,139
-3,Savannah Jo Eadens,SavannahEadens,3339237555,1370,920,4193,35
-4,Maxine Bernstein,maxoregonian,223587964,12082,2652,25594,436
-5,Zane Sparling,PDXzane,993907595000725504,28803,948,5345,450
-6,Rose Wong 寶怡,rosebwong,884457226940948480,1417,1048,1391,21
-7,Gosia Wozniacka,GosiaWozniacka,166518707,3210,2211,1648,173
-8,Rob Davis,robwdavis,39621524,6515,157,10713,380
-9,Aimee Green,o_aimee,239600819,2629,112,3933,117
-10,Kristi Turnquist,Kristiturnquist,8540312,4094,2683,24663,235
-11,Aaron J. Fentress,AaronJFentress,161568195,27268,9083,124400,596
-12,Andrew Theen 🎙🏀🎙,andrewtheen,53454719,5478,1984,31359,274
-13,Michael Russell,tdmrussell,104340042,4931,263,29711,193
-14,Tom Hallman Jr.,thallmanjr,222543804,1891,39,2919,0
-15,Nick Daschel,nickdaschel,19741316,8992,319,34428,245
-16,Mike Rogoway,rogoway,17527292,7575,4382,14406,516
-17,Ryan Clarke,RyanTClarke,326913251,4312,683,30749,174
-18,Nik Streng,NikStreng,399091671,1548,1185,47285,31
-19,Julia Silverman,jrlsilverman,1212792467377909760,1105,324,3550,24
-20,Janet Eastman,janeteastman,39618700,2147,2231,4891,99
+index,display_name,username,id,followers_count,following_count,tweet_count,listed_count,name
+0,Jamie Hale,HaleJamesB,21505125,3900,1356,8362,107,Jamie Hale
+1,Ted Sickinger,tedsickinger,199853726,2199,151,583,112,Ted Sickinger
+2,Lizzy Acker,lizzzyacker,85972500,5208,4305,17756,139,Lizzy Acker
+3,Savannah Jo Eadens,SavannahEadens,3339237555,1370,920,4193,35,Savannah Eadens
+4,Maxine Bernstein,maxoregonian,223587964,12082,2652,25594,436,Maxine Bernstein
+5,Zane Sparling,PDXzane,993907595000725504,28803,948,5345,450,Zane Sparling
+6,Rose Wong 寶怡,rosebwong,884457226940948480,1417,1048,1391,21,Rose Wong
+7,Gosia Wozniacka,GosiaWozniacka,166518707,3210,2211,1648,173,Gosia Wozniacka
+8,Rob Davis,robwdavis,39621524,6515,157,10713,380,Rob Davis
+9,Aimee Green,o_aimee,239600819,2629,112,3933,117,Aimee Green
+10,Kristi Turnquist,Kristiturnquist,8540312,4094,2683,24663,235,Kristi Turnquist
+11,Aaron J. Fentress,AaronJFentress,161568195,27268,9083,124400,596,Aaron Fentress
+12,Andrew Theen 🎙🏀🎙,andrewtheen,53454719,5478,1984,31359,274,Andrew Theen
+13,Michael Russell,tdmrussell,104340042,4931,263,29711,193,Michael Russell
+14,Tom Hallman Jr.,thallmanjr,222543804,1891,39,2919,0,Tom Hallman Jr.
+15,Nick Daschel,nickdaschel,19741316,8992,319,34428,245,Nick Daschel
+16,Mike Rogoway,rogoway,17527292,7575,4382,14406,516,Mike Rogoway
+17,Ryan Clarke,RyanTClarke,326913251,4312,683,30749,174,Ryan Clarke
+18,Nik Streng,NikStreng,399091671,1548,1185,47285,31,Nik Streng
+19,Julia Silverman,jrlsilverman,1212792467377909760,1105,324,3550,24,Julia Silverman
+20,Janet Eastman,janeteastman,39618700,2147,2231,4891,99,Janet Eastman
