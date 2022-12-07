@@ -108,6 +108,14 @@ COPY f_proj.userData
 FROM 'C:\Users\Public\SQL CSVs\userData.csv'
 WITH (FORMAT CSV, HEADER);
 
+/* Remove duplicate tweet_ids */
+DELETE FROM f_proj.tweetData AS td1
+USING f_proj.tweetData AS td2
+WHERE td1."index" > td2."index"
+AND td1.tweet_id = td2.tweet_id;
+
+/* Create constraints on userData and tweetData */
+
 ALTER TABLE f_proj.userData
 ADD CONSTRAINT userData_pkey PRIMARY KEY (id);
 
@@ -115,10 +123,14 @@ ALTER TABLE f_proj.userData
 ADD CONSTRAINT unique_user UNIQUE (username);
 
 ALTER TABLE f_proj.tweetData
+ADD CONSTRAINT tweetData_pkey PRIMARY KEY (tweet_id);
+
+ALTER TABLE f_proj.tweetData
 ADD CONSTRAINT tweetData_aID_pkey FOREIGN KEY (author_id) REFERENCES f_proj.userData (id);
 
 ALTER TABLE f_proj.articles_raw
 ADD CONSTRAINT articles_raw_pkey PRIMARY KEY (article_id);
+
 
 /* Query to create the table I used to collect my data */
 
