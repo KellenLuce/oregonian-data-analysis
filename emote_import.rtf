@@ -1,0 +1,55 @@
+{\rtf1\ansi\ansicpg1252\cocoartf2638
+\cocoatextscaling0\cocoaplatform0{\fonttbl\f0\fnil\fcharset0 Menlo-Regular;}
+{\colortbl;\red255\green255\blue255;\red89\green138\blue67;\red23\green23\blue23;\red202\green202\blue202;
+\red70\green137\blue204;\red194\green126\blue101;\red212\green214\blue154;}
+{\*\expandedcolortbl;;\cssrgb\c41569\c60000\c33333;\cssrgb\c11765\c11765\c11765;\cssrgb\c83137\c83137\c83137;
+\cssrgb\c33725\c61176\c83922;\cssrgb\c80784\c56863\c47059;\cssrgb\c86275\c86275\c66667;}
+\margl1440\margr1440\vieww11520\viewh8400\viewkind0
+\deftab720
+\pard\pardeftab720\partightenfactor0
+
+\f0\fs24 \cf2 \cb3 \expnd0\expndtw0\kerning0
+\outl0\strokewidth0 \strokec2 --emotional words database table creation\cf4 \cb1 \strokec4 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 CREATE\cf4 \strokec4  \cf5 \strokec5 TABLE\cf4 \strokec4  emote_words (\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf4 \cb3     \cf6 \strokec6 "id"\cf4 \strokec4  \cf5 \strokec5 SERIAL\cf4 \strokec4  PRIMARY KEY,\cb1 \
+\cb3     word \cf5 \strokec5 TEXT\cf4 \strokec4 ,\cb1 \
+\cb3     let \cf5 \strokec5 INT\cf4 \strokec4 , \cf2 \strokec2 --amount of letters in word\cf4 \cb1 \strokec4 \
+\cb3     syl \cf5 \strokec5 INT\cf4 \strokec4 , \cf2 \strokec2 --amount of syllables in word\cf4 \cb1 \strokec4 \
+\cb3     freq_KF \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     freq_BNC \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     freq_TV \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     freq_PG \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     freq_BN \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     noun \cf5 \strokec5 INT\cf4 \strokec4 ,\cb1 \
+\cb3     adjective \cf5 \strokec5 INT\cf4 \strokec4 ,\cb1 \
+\cb3     ndim1 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim2 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim3 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim4 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim5 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim6 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     ndim7 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim1 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim2 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim3 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim4 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim5 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim6 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim7 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim8 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim9 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     adim10 \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     p_hit \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     p_fa \cf5 \strokec5 REAL\cf4 \strokec4 ,\cb1 \
+\cb3     DP \cf5 \strokec5 REAL\cf4 \cb1 \strokec4 \
+\cb3 );\cb1 \
+\pard\pardeftab720\partightenfactor0
+\cf5 \cb3 \strokec5 DROP\cf4 \strokec4  \cf5 \strokec5 TABLE\cf4 \strokec4  emote_words;\cb1 \
+\
+\
+\cf5 \cb3 \strokec5 COPY\cf4 \strokec4  f_proj.emote_words (word, let, syl, freq_KF, freq_BNC, freq_TV, freq_PG, freq_BN, noun, adjective, ndim1, ndim2, ndim3, ndim4, ndim5, ndim6, ndim7, adim1, adim2, adim3, adim4, adim5, adim6, adim7, adim8, adim9, adim10, p_hit, p_fa, DP)\cb1 \
+\cf5 \cb3 \strokec5 FROM\cf4 \strokec4  \cf6 \strokec6 \'91(insertfilelocationhere)/emote.csv'\cf4 \cb1 \strokec4 \
+\cf5 \cb3 \strokec5 WITH\cf4 \strokec4  (\cf7 \strokec7 FORMAT\cf4 \strokec4  CSV, HEADER);\cb1 \
+}
