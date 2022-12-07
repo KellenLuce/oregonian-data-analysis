@@ -40,6 +40,10 @@ Various Twitter-Article Analysis:
 -- Across all tweets sharing articles, the average number of retweets is 1.24, the avg number of quote retweets is 0.64, the average
    number of replies is 1.36, and the average number of likes is 11.04
 
+-- Articles with the highest average interactions on twitter were labeled Timbers, Beavers, and Travel & Outdoors
+-- Articles shared to twitter with the highest average interactions were labeled Real Estate (of course), Public Safety, 
+   Portland, and Education
+
 -- Some of my conclusions:
    -- Journalist self-promotion does not seem to significantly impact the amount of interactions an article receives (as quantified
       by the number of shares it has received). It is more likely that articles which seemed to be gaining traction were tweeted out
