@@ -44,13 +44,9 @@ WITH (FORMAT CSV, HEADER);
 
 CREATE TABLE f_proj.tweetData (
 	"index" SERIAL,
-	"start" FLOAT,
-	"end" FLOAT,
 	"url" TEXT,
 	expanded_url TEXT,
 	display_url TEXT,
-	images TEXT,
-	"status" TEXT,
 	title TEXT,
 	"description" TEXT,
 	unwound_url TEXT,
@@ -63,8 +59,7 @@ CREATE TABLE f_proj.tweetData (
     like_count FLOAT,
     quote_count FLOAT,
     reference_type TEXT,
-    reference_id BIGINT,
-    media_key TEXT
+    reference_id BIGINT
 );
 
 COPY f_proj.tweetData
