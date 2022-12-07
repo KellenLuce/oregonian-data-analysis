@@ -119,3 +119,16 @@ ADD CONSTRAINT tweetData_aID_pkey FOREIGN KEY (author_id) REFERENCES f_proj.user
 
 ALTER TABLE f_proj.articles_raw
 ADD CONSTRAINT articles_raw_pkey PRIMARY KEY (article_id);
+
+/* Query to create the table I used to collect my data */
+
+CREATE TABLE f_proj.shared_articles AS(
+    SELECT DISTINCT ON(tweet_id) ar.article_id, ar.author, ud.name AS tweeter, AR.headline, 
+    retweet_count, reply_count, like_count, quote_count, ar.share_count FROM f_proj.tweetDATA AS td
+    JOIN f_proj.articles_raw AS ar
+    ON SIMILARITY(ar.headline, td.title) > 0.8
+    JOIN f_proj.userData AS ud 
+    ON td.author_id = ud.id
+    ORDER BY tweet_id, ar.share_count DESC
+);
+
