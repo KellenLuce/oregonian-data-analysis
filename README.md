@@ -49,6 +49,7 @@ Various Twitter-Article Analysis:
 
 
 
+------------------------
 Emotional Word Analyses:
 Article-specific
 -- Meaningfulness scores (dimension 5, how well you understand the meaning of the word) relatively high (average score of 6.2925 for nouns [max score was 6.96] and average score of 6.3839 for adjectives [max score was 7]). Share count seems to increase as meaningfulness score increases in adjectives (no obvious correlation in noun words), possibly inferring articles with easier to understand words get more shares. Words like domineering, obliging, subjective etc. have lower scores and the corresponding articles have lower shares, while words like magical, protected, good, etc. have the max score (7, most accurately understood) with those articles having closer to thousands of shares.
